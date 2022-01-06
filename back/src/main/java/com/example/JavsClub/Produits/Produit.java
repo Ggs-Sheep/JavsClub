@@ -12,17 +12,23 @@ public abstract class Produit implements Serializable {
     @Column(name = "id", nullable = false)
     private Long id;
     private String nom;
-    private int qte;
-    private String type;
+    private String paysProvenance;
+    private long prixAchat;
+    private long prixVente;
+    private String libelle;
+    private String description;
 
     public Produit() {
         super();
     }
 
-    public Produit(String nom, int qte, String type) {
+    public Produit(String nom, String paysProvenance, long prixVente, long prixAchat, String libelle, String description) {
         this.nom = nom;
-        this.qte = qte;
-        this.type = type;
+        this.paysProvenance = paysProvenance;
+        this.prixAchat = prixAchat;
+        this.prixVente = prixVente;
+        this.libelle = libelle;
+        this.description = description;
     }
 
     public String getNom() {
@@ -33,14 +39,6 @@ public abstract class Produit implements Serializable {
         this.nom = nom;
     }
 
-    public int getQte() {
-        return qte;
-    }
-
-    public void setQte(int qte) {
-        this.qte = qte;
-    }
-
     public Long getId() {
         return id;
     }
@@ -49,10 +47,42 @@ public abstract class Produit implements Serializable {
         this.id = id;
     }
 
-    public String getType() {
-        return this.type;
+    public String getPaysProvenance() {
+        return this.paysProvenance;
     }
 
-    public void setType(String type) {this.type = type;}
+    public void setPaysProvenance(String type) {this.paysProvenance = type;}
+
+    public long getPrixAchat() {
+        return prixAchat;
+    }
+
+    public void setPrixAchat(long prixAchat) {
+        this.prixAchat = prixAchat;
+    }
+
+    public long getPrixVente() {
+        return prixVente;
+    }
+
+    public void setPrixVente(long prixVente) {
+        this.prixVente = prixVente;
+    }
+
+    public String getLibelle() {
+        return libelle;
+    }
+
+    public void setLibelle(String libelle) {
+        this.libelle = libelle;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }
 

@@ -1,5 +1,6 @@
 package com.example.JavsClub.Entrepot;
 
+import com.example.JavsClub.Caisse.Caisse;
 import com.example.JavsClub.Produits.Produit;
 
 import javax.persistence.*;
@@ -16,24 +17,24 @@ public class Entrepot implements Serializable {
     @Column(name = "id", nullable = false)
     private Long id;
     @OneToMany
-    private List<Produit> produits;
+    private List<Caisse> caisses;
     private int capacite;
 
-    public Entrepot(List<Produit> produits, int capacite) {
+    public Entrepot(List<Caisse> caisses, int capacite) {
         super();
-        this.produits = produits;
+        this.caisses = caisses;
         this.capacite = capacite;
     }
 
     public Entrepot(int capacite) {
         super();
-        this.produits = new ArrayList<Produit>();
+        this.caisses = new ArrayList<Caisse>();
         this.capacite = capacite;
     }
 
     public Entrepot(){
         super();
-        this.produits = new ArrayList<Produit>();
+        this.caisses = new ArrayList<Caisse>();
         this.capacite = 1000;
     }
 
@@ -45,12 +46,12 @@ public class Entrepot implements Serializable {
         this.id = id;
     }
 
-    public List<Produit> getProduits() {
-        return this.produits;
+    public List<Caisse> getCaisses() {
+        return this.caisses;
     }
 
-    public void addProduit(Produit produit) {
-        this.produits.add(produit);
+    public void addCaisse(Caisse caisse) {
+        this.caisses.add(caisse);
     }
 
     public int getCapacite() {
@@ -62,10 +63,10 @@ public class Entrepot implements Serializable {
     }
 
     public int getStorageUsed(){
-        int storageUsed = 0;
-        for (Produit produit: this.produits) {
-            storageUsed = storageUsed + produit.getQte();
-        }
-        return storageUsed;
+        return this.caisses.size();
+    }
+
+    public int getStorageRemaining(){
+        return this.capacite - getStorageUsed();
     }
 }

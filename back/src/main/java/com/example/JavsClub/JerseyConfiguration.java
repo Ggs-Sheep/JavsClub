@@ -1,5 +1,6 @@
 package com.example.JavsClub;
 
+import com.example.JavsClub.Caisse.CaisseRessource;
 import com.example.JavsClub.Entrepot.EntrepotRessource;
 import com.example.JavsClub.Produits.ProduitRessource;
 import org.glassfish.jersey.server.ResourceConfig;
@@ -13,6 +14,7 @@ import javax.ws.rs.ApplicationPath;
 @Configuration
 public class JerseyConfiguration extends ResourceConfig {
     public JerseyConfiguration() {
+        register(CaisseRessource.class);
         register(ProduitRessource.class);
         register(EntrepotRessource.class);
     }

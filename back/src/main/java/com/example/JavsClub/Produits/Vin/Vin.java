@@ -13,12 +13,22 @@ public class Vin extends Produit implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
+    private int contenance;
 
-    public Vin(String nom, int qte,String type) {
-        super(nom,qte,type);
+    public Vin(String nom, String paysProvenance, long prixVente, long prixAchat, String libelle, String description, int contenance) {
+        super(nom, paysProvenance, prixVente, prixAchat, libelle, description);
+        this.contenance = contenance;
     }
 
     public Vin() {
 
+    }
+
+    public int getContenance() {
+        return contenance;
+    }
+
+    public void setContenance(int contenance) {
+        this.contenance = contenance;
     }
 }

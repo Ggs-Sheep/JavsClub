@@ -13,10 +13,22 @@ public class Cigare extends Produit implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
+    private String type;
 
-    public Cigare(String nom, int qte,String type) {
-        super(nom,qte,type);
+    public Cigare(String nom, String paysProvenance, long prixVente, long prixAchat,String libelle, String description, String type) {
+        super(nom, paysProvenance, prixVente, prixAchat, libelle, description);
+        this.type = type;
     }
 
-    public Cigare(){}
+    public Cigare() {
+
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 }

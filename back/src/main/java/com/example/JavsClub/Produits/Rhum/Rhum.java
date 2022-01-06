@@ -13,10 +13,20 @@ public class Rhum extends Produit implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
+    private int contenance;
 
-    public Rhum(String nom, int qte,String type) {
-        super(nom,qte,type);
+    public Rhum(String nom, String paysProvenance, long prixVente, long prixAchat,String libelle, String description, int contenance) {
+        super(nom, paysProvenance, prixVente, prixAchat, libelle, description);
+        this.contenance = contenance;
     }
 
     public Rhum(){}
+
+    public int getContenance() {
+        return contenance;
+    }
+
+    public void setContenance(int contenance) {
+        this.contenance = contenance;
+    }
 }

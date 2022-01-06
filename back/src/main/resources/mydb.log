@@ -1,26 +1,135 @@
-/*C10*/SET SCHEMA PUBLIC
+/*C2*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C3*/SET SCHEMA PUBLIC
+drop table if exists caisse CASCADE 
+drop table if exists caisse_produits CASCADE 
+drop table if exists entrepot CASCADE 
+drop table if exists entrepot_caisses CASCADE 
+drop table if exists produit CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table caisse (id bigint not null, date_arrivee timestamp, date_commande timestamp, provenance varchar(255), primary key (id))
+create table caisse_produits (caisse_id bigint not null, produits_id bigint not null)
 create table entrepot (id bigint not null, capacite integer not null, primary key (id))
-create table entrepot_produits (entrepot_id bigint not null, produits_id bigint not null)
-create table produit (dtype varchar(31) not null, id bigint not null, nom varchar(255), qte integer not null, type varchar(255), primary key (id))
-alter table entrepot_produits add constraint UK_qbchlpm19dlbggt5r98ckfys2 unique (produits_id)
-alter table entrepot_produits add constraint FKj0io9o40gwr3cey28q830bk5c foreign key (produits_id) references produit
-alter table entrepot_produits add constraint FK542jhmhv2gi8uofag1kkgql9j foreign key (entrepot_id) references entrepot
+create table entrepot_caisses (entrepot_id bigint not null, caisses_id bigint not null)
+create table produit (dtype varchar(31) not null, id bigint not null, description varchar(255), libelle varchar(255), nom varchar(255), pays_provenance varchar(255), prix_achat bigint not null, prix_vente bigint not null, type varchar(255), contenance integer, primary key (id))
+alter table caisse_produits add constraint UK_8hk20q1u8o64bqsuenfl0gof4 unique (produits_id)
+alter table entrepot_caisses add constraint UK_8r54tcbtsjakx9vcjib68rnrn unique (caisses_id)
+alter table caisse_produits add constraint FKkt1on4mk6scbiyibov1ci6gag foreign key (produits_id) references produit
+alter table caisse_produits add constraint FK2g3yj9bt86f8jyp3y062md5m4 foreign key (caisse_id) references caisse
+alter table entrepot_caisses add constraint FKpjyr1w3q4t741ds9768bxeka2 foreign key (caisses_id) references caisse
+alter table entrepot_caisses add constraint FKp99p0qgykow18mf0o0lv72kci foreign key (entrepot_id) references entrepot
 DISCONNECT
-/*C17*/SET SCHEMA PUBLIC
+/*C5*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C16*/SET SCHEMA PUBLIC
+/*C6*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C12*/SET SCHEMA PUBLIC
+/*C8*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C15*/SET SCHEMA PUBLIC
+/*C7*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C19*/SET SCHEMA PUBLIC
+/*C4*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C18*/SET SCHEMA PUBLIC
+/*C9*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C14*/SET SCHEMA PUBLIC
+/*C10*/SET SCHEMA PUBLIC
 DISCONNECT
 /*C11*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C13*/SET SCHEMA PUBLIC
+/*C12*/SET SCHEMA PUBLIC
 DISCONNECT
+/*C13*/SET SCHEMA PUBLIC
+drop table if exists caisse CASCADE 
+drop table if exists caisse_produits CASCADE 
+drop table if exists entrepot CASCADE 
+drop table if exists entrepot_caisses CASCADE 
+drop table if exists produit CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table caisse (id bigint not null, date_arrivee timestamp, date_commande timestamp, provenance varchar(255), primary key (id))
+create table caisse_produits (caisse_id bigint not null, produits_id bigint not null)
+create table entrepot (id bigint not null, capacite integer not null, primary key (id))
+create table entrepot_caisses (entrepot_id bigint not null, caisses_id bigint not null)
+create table produit (dtype varchar(31) not null, id bigint not null, description varchar(255), libelle varchar(255), nom varchar(255), pays_provenance varchar(255), prix_achat bigint not null, prix_vente bigint not null, type varchar(255), contenance integer, primary key (id))
+alter table caisse_produits add constraint UK_8hk20q1u8o64bqsuenfl0gof4 unique (produits_id)
+alter table entrepot_caisses add constraint UK_8r54tcbtsjakx9vcjib68rnrn unique (caisses_id)
+alter table caisse_produits add constraint FKkt1on4mk6scbiyibov1ci6gag foreign key (produits_id) references produit
+alter table caisse_produits add constraint FK2g3yj9bt86f8jyp3y062md5m4 foreign key (caisse_id) references caisse
+alter table entrepot_caisses add constraint FKpjyr1w3q4t741ds9768bxeka2 foreign key (caisses_id) references caisse
+alter table entrepot_caisses add constraint FKp99p0qgykow18mf0o0lv72kci foreign key (entrepot_id) references entrepot
+DISCONNECT
+/*C14*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C15*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C16*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C17*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C18*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C19*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C20*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C22*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C21*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C23*/SET SCHEMA PUBLIC
+drop table if exists caisse CASCADE 
+drop table if exists caisse_produits CASCADE 
+drop table if exists entrepot CASCADE 
+drop table if exists entrepot_caisses CASCADE 
+drop table if exists produit CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table caisse (id bigint not null, date_arrivee timestamp, date_commande timestamp, provenance varchar(255), primary key (id))
+create table caisse_produits (caisse_id bigint not null, produits_id bigint not null)
+create table entrepot (id bigint not null, capacite integer not null, primary key (id))
+create table entrepot_caisses (entrepot_id bigint not null, caisses_id bigint not null)
+create table produit (dtype varchar(31) not null, id bigint not null, description varchar(255), libelle varchar(255), nom varchar(255), pays_provenance varchar(255), prix_achat bigint not null, prix_vente bigint not null, type varchar(255), contenance integer, primary key (id))
+alter table caisse_produits add constraint UK_8hk20q1u8o64bqsuenfl0gof4 unique (produits_id)
+alter table entrepot_caisses add constraint UK_8r54tcbtsjakx9vcjib68rnrn unique (caisses_id)
+alter table caisse_produits add constraint FKkt1on4mk6scbiyibov1ci6gag foreign key (produits_id) references produit
+alter table caisse_produits add constraint FK2g3yj9bt86f8jyp3y062md5m4 foreign key (caisse_id) references caisse
+alter table entrepot_caisses add constraint FKpjyr1w3q4t741ds9768bxeka2 foreign key (caisses_id) references caisse
+alter table entrepot_caisses add constraint FKp99p0qgykow18mf0o0lv72kci foreign key (entrepot_id) references entrepot
+/*C25*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C23*/DISCONNECT
+/*C26*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C27*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C24*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C28*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C29*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C30*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C31*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C32*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C33*/SET SCHEMA PUBLIC
+drop table if exists caisse CASCADE 
+drop table if exists caisse_produits CASCADE 
+drop table if exists entrepot CASCADE 
+drop table if exists entrepot_caisses CASCADE 
+drop table if exists produit CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table caisse (id bigint not null, date_arrivee timestamp, date_commande timestamp, provenance varchar(255), primary key (id))
+create table caisse_produits (caisse_id bigint not null, produits_id bigint not null)
+create table entrepot (id bigint not null, capacite integer not null, primary key (id))
+create table entrepot_caisses (entrepot_id bigint not null, caisses_id bigint not null)
+create table produit (dtype varchar(31) not null, id bigint not null, description varchar(255), libelle varchar(255), nom varchar(255), pays_provenance varchar(255), prix_achat bigint not null, prix_vente bigint not null, type varchar(255), contenance integer, primary key (id))
+alter table caisse_produits add constraint UK_8hk20q1u8o64bqsuenfl0gof4 unique (produits_id)
+alter table entrepot_caisses add constraint UK_8r54tcbtsjakx9vcjib68rnrn unique (caisses_id)
+alter table caisse_produits add constraint FKkt1on4mk6scbiyibov1ci6gag foreign key (produits_id) references produit
+alter table caisse_produits add constraint FK2g3yj9bt86f8jyp3y062md5m4 foreign key (caisse_id) references caisse
+alter table entrepot_caisses add constraint FKpjyr1w3q4t741ds9768bxeka2 foreign key (caisses_id) references caisse
+alter table entrepot_caisses add constraint FKp99p0qgykow18mf0o0lv72kci foreign key (entrepot_id) references entrepot

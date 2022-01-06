@@ -12,6 +12,7 @@ import java.util.Optional;
 public class ProduitRessource {
 
     @GET
+    @Path(("produit/{id}"))
     @Produces(MediaType.APPLICATION_JSON)
     public Optional<Produit> findProduitById(@QueryParam("id") Long id) {
         Optional<Produit> p = produitRepository.findById(id);
