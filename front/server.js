@@ -27,7 +27,12 @@ app.get("/cigares", (req, res) => {
 
 // GET /whisky
 app.get("/whisky", (req, res) => {
-  res.sendFile(path.resolve(pagesDirectory,'/vues/whisky.html'))
+  res.sendFile(path.resolve(pagesDirectory,'vues/whisky.html'))
+})
+
+// GET /whisky
+app.get("/whiskyVue", (req, res) => {
+  res.sendFile(path.resolve(pagesDirectory,'vues/Whisky/vueWhisky.html'))
 })
 
 // GET /adlsfalsdfjk
