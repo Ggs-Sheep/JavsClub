@@ -30,7 +30,7 @@ app.get("/whisky", (req, res) => {
   res.sendFile(path.resolve(pagesDirectory,'vues/whisky.html'))
 })
 
-// GET /whisky
+// GET /whiskyVue
 app.get("/whiskyVue", (req, res) => {
   res.sendFile(path.resolve(pagesDirectory,'vues/Whisky/vueWhisky.html'))
 })
