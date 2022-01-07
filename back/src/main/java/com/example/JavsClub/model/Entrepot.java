@@ -1,7 +1,6 @@
-package com.example.JavsClub.Entrepot;
+package com.example.JavsClub.model;
 
-import com.example.JavsClub.Caisse.Caisse;
-import com.example.JavsClub.Produits.Produit;
+import com.example.JavsClub.model.Caisse;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -14,28 +13,23 @@ public class Entrepot implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
     private Long id;
-    @OneToMany
-    private List<Caisse> caisses;
+    private String name;
     private int capacite;
 
-    public Entrepot(List<Caisse> caisses, int capacite) {
-        super();
-        this.caisses = caisses;
-        this.capacite = capacite;
-    }
+    @OneToMany(mappedBy = "entrepot", fetch = FetchType.EAGER)
+    private List<Caisse> caisses = new ArrayList<>();
 
-    public Entrepot(int capacite) {
-        super();
+    public Entrepot(String name,int capacite) {
+        this.name = name;
         this.caisses = new ArrayList<Caisse>();
         this.capacite = capacite;
     }
 
     public Entrepot(){
-        super();
         this.caisses = new ArrayList<Caisse>();
         this.capacite = 1000;
+        this.name = "undefined-entrepot";
     }
 
     Long getId() {
@@ -44,6 +38,14 @@ public class Entrepot implements Serializable {
 
     void setId(Long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public List<Caisse> getCaisses() {

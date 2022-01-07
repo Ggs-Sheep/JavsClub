@@ -1,6 +1,6 @@
-package com.example.JavsClub.Produits;
+package com.example.JavsClub.repository;
 
-import com.example.JavsClub.Produits.Produit;
+import com.example.JavsClub.model.Produit;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;

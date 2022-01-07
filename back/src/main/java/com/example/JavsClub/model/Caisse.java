@@ -1,15 +1,18 @@
-package com.example.JavsClub.Caisse;
+package com.example.JavsClub.model;
 
-import com.example.JavsClub.Produits.Produit;
+import com.example.JavsClub.controller.EntrepotRessource;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Entity
-public abstract class Caisse implements Serializable {
+public class Caisse implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -19,18 +22,22 @@ public abstract class Caisse implements Serializable {
     private String provenance;
     private Date dateArrivee;
     private Date dateCommande;
-    @OneToMany
-    private List<Produit> produits;
+
+    @OneToMany(mappedBy = "caisse", fetch = FetchType.EAGER)
+    private List<Produit> produits = new ArrayList<>();
+
+    @ManyToOne
+    private Entrepot entrepot;
 
     public Caisse() {
-        super();
     }
 
-    public Caisse(String provenance, int qte, Date dateArrivee, Date dateCommande) {
+    public Caisse(String provenance, Date dateArrivee, Date dateCommande, List<Produit> produits, Entrepot entrepot) {
         this.provenance = provenance;
         this.dateArrivee = dateArrivee;
         this.dateCommande = dateCommande;
-        this.produits = new ArrayList<Produit>();
+        this.produits = produits;
+        this.entrepot = entrepot;
     }
 
     public String getProvenance() {
@@ -75,6 +82,14 @@ public abstract class Caisse implements Serializable {
 
     public void addProduit(Produit produit) {
         this.produits.add(produit);
+    }
+
+    public Entrepot getEntrepot() {
+        return entrepot;
+    }
+
+    public void setEntrepot(Entrepot entrepot) {
+        this.entrepot = entrepot;
     }
 }
 

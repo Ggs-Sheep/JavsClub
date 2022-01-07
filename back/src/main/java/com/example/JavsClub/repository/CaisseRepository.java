@@ -1,11 +1,11 @@
-package com.example.JavsClub.Caisse;
+package com.example.JavsClub.repository;
 
-import com.example.JavsClub.Caisse.Caisse;
+import com.example.JavsClub.model.Caisse;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;
 
 public interface CaisseRepository extends CrudRepository<Caisse, Long> {
-    Optional<Caisse> findById(Long id);
+    public Caisse findCaisseById(Long id);
 
 }

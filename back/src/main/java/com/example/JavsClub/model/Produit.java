@@ -1,4 +1,6 @@
-package com.example.JavsClub.Produits;
+package com.example.JavsClub.model;
+
+import com.example.JavsClub.controller.CaisseRessource;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -18,17 +20,21 @@ public abstract class Produit implements Serializable {
     private String libelle;
     private String description;
 
-    public Produit() {
-        super();
-    }
+    @ManyToOne
+    private Caisse caisse;
 
-    public Produit(String nom, String paysProvenance, long prixVente, long prixAchat, String libelle, String description) {
+    public Produit(String nom, String paysProvenance, long prixAchat, long prixVente, String libelle, String description, Caisse caisse) {
         this.nom = nom;
         this.paysProvenance = paysProvenance;
         this.prixAchat = prixAchat;
         this.prixVente = prixVente;
         this.libelle = libelle;
         this.description = description;
+        this.caisse = caisse;
+    }
+
+    public Produit() {
+
     }
 
     public String getNom() {
@@ -84,5 +90,14 @@ public abstract class Produit implements Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public Caisse getCaisse() {
+        return caisse;
+    }
+
+    public void setCaisse(Caisse caisse) {
+        this.caisse = caisse;
+    }
+
 }
 

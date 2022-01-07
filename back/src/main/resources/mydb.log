@@ -1,135 +1,151 @@
-/*C2*/SET SCHEMA PUBLIC
+/*C87*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C3*/SET SCHEMA PUBLIC
+/*C96*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C95*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C94*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C93*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C92*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C91*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C90*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C89*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C88*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C98*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C99*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C100*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C101*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C97*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C102*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C103*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C104*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C105*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C106*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C107*/SET SCHEMA PUBLIC
 drop table if exists caisse CASCADE 
-drop table if exists caisse_produits CASCADE 
 drop table if exists entrepot CASCADE 
-drop table if exists entrepot_caisses CASCADE 
 drop table if exists produit CASCADE 
 drop sequence hibernate_sequence if exists
 create sequence hibernate_sequence start with 1 increment by 1
-create table caisse (id bigint not null, date_arrivee timestamp, date_commande timestamp, provenance varchar(255), primary key (id))
-create table caisse_produits (caisse_id bigint not null, produits_id bigint not null)
-create table entrepot (id bigint not null, capacite integer not null, primary key (id))
-create table entrepot_caisses (entrepot_id bigint not null, caisses_id bigint not null)
-create table produit (dtype varchar(31) not null, id bigint not null, description varchar(255), libelle varchar(255), nom varchar(255), pays_provenance varchar(255), prix_achat bigint not null, prix_vente bigint not null, type varchar(255), contenance integer, primary key (id))
-alter table caisse_produits add constraint UK_8hk20q1u8o64bqsuenfl0gof4 unique (produits_id)
-alter table entrepot_caisses add constraint UK_8r54tcbtsjakx9vcjib68rnrn unique (caisses_id)
-alter table caisse_produits add constraint FKkt1on4mk6scbiyibov1ci6gag foreign key (produits_id) references produit
-alter table caisse_produits add constraint FK2g3yj9bt86f8jyp3y062md5m4 foreign key (caisse_id) references caisse
-alter table entrepot_caisses add constraint FKpjyr1w3q4t741ds9768bxeka2 foreign key (caisses_id) references caisse
-alter table entrepot_caisses add constraint FKp99p0qgykow18mf0o0lv72kci foreign key (entrepot_id) references entrepot
-DISCONNECT
-/*C5*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C6*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C8*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C7*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C4*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C9*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C10*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C11*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C12*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C13*/SET SCHEMA PUBLIC
+create table caisse (id bigint not null, date_arrivee timestamp, date_commande timestamp, provenance varchar(255), entrepot_id bigint, primary key (id))
+create table entrepot (id bigint not null, capacite integer not null, name varchar(255), primary key (id))
+create table produit (dtype varchar(31) not null, id bigint not null, description varchar(255), libelle varchar(255), nom varchar(255), pays_provenance varchar(255), prix_achat bigint not null, prix_vente bigint not null, type varchar(255), contenance integer, caisse_id bigint, primary key (id))
+alter table caisse add constraint FKgs9q8d185ksif1ukovxhswalj foreign key (entrepot_id) references entrepot
+alter table produit add constraint FKjyrbfyy3lw3d1ky1cwny0cak foreign key (caisse_id) references caisse
+INSERT INTO ENTREPOT VALUES(1,1000,'undefined-entrepot')
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 2
+COMMIT
 drop table if exists caisse CASCADE 
-drop table if exists caisse_produits CASCADE 
 drop table if exists entrepot CASCADE 
-drop table if exists entrepot_caisses CASCADE 
+drop table if exists produit CASCADE 
+drop sequence hibernate_sequence if exists
+/*C113*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C111*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C116*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C108*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C109*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C112*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C115*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C107*/DISCONNECT
+/*C114*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C110*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C117*/SET SCHEMA PUBLIC
+drop table if exists caisse CASCADE 
+drop table if exists entrepot CASCADE 
 drop table if exists produit CASCADE 
 drop sequence hibernate_sequence if exists
 create sequence hibernate_sequence start with 1 increment by 1
-create table caisse (id bigint not null, date_arrivee timestamp, date_commande timestamp, provenance varchar(255), primary key (id))
-create table caisse_produits (caisse_id bigint not null, produits_id bigint not null)
-create table entrepot (id bigint not null, capacite integer not null, primary key (id))
-create table entrepot_caisses (entrepot_id bigint not null, caisses_id bigint not null)
-create table produit (dtype varchar(31) not null, id bigint not null, description varchar(255), libelle varchar(255), nom varchar(255), pays_provenance varchar(255), prix_achat bigint not null, prix_vente bigint not null, type varchar(255), contenance integer, primary key (id))
-alter table caisse_produits add constraint UK_8hk20q1u8o64bqsuenfl0gof4 unique (produits_id)
-alter table entrepot_caisses add constraint UK_8r54tcbtsjakx9vcjib68rnrn unique (caisses_id)
-alter table caisse_produits add constraint FKkt1on4mk6scbiyibov1ci6gag foreign key (produits_id) references produit
-alter table caisse_produits add constraint FK2g3yj9bt86f8jyp3y062md5m4 foreign key (caisse_id) references caisse
-alter table entrepot_caisses add constraint FKpjyr1w3q4t741ds9768bxeka2 foreign key (caisses_id) references caisse
-alter table entrepot_caisses add constraint FKp99p0qgykow18mf0o0lv72kci foreign key (entrepot_id) references entrepot
-DISCONNECT
-/*C14*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C15*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C16*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C17*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C18*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C19*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C20*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C22*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C21*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C23*/SET SCHEMA PUBLIC
+create table caisse (id bigint not null, date_arrivee timestamp, date_commande timestamp, provenance varchar(255), entrepot_id bigint, primary key (id))
+create table entrepot (id bigint not null, capacite integer not null, name varchar(255), primary key (id))
+create table produit (dtype varchar(31) not null, id bigint not null, description varchar(255), libelle varchar(255), nom varchar(255), pays_provenance varchar(255), prix_achat bigint not null, prix_vente bigint not null, type varchar(255), contenance integer, caisse_id bigint, primary key (id))
+alter table caisse add constraint FKgs9q8d185ksif1ukovxhswalj foreign key (entrepot_id) references entrepot
+alter table produit add constraint FKjyrbfyy3lw3d1ky1cwny0cak foreign key (caisse_id) references caisse
+INSERT INTO ENTREPOT VALUES(1,1000,'undefined-entrepot')
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 2
+COMMIT
+INSERT INTO CAISSE VALUES(2,NULL,NULL,NULL,NULL)
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 3
+COMMIT
 drop table if exists caisse CASCADE 
-drop table if exists caisse_produits CASCADE 
 drop table if exists entrepot CASCADE 
-drop table if exists entrepot_caisses CASCADE 
+drop table if exists produit CASCADE 
+drop sequence hibernate_sequence if exists
+DISCONNECT
+/*C118*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C119*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C120*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C121*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C122*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C123*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C124*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C125*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C126*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C127*/SET SCHEMA PUBLIC
+drop table if exists caisse CASCADE 
+drop table if exists entrepot CASCADE 
 drop table if exists produit CASCADE 
 drop sequence hibernate_sequence if exists
 create sequence hibernate_sequence start with 1 increment by 1
-create table caisse (id bigint not null, date_arrivee timestamp, date_commande timestamp, provenance varchar(255), primary key (id))
-create table caisse_produits (caisse_id bigint not null, produits_id bigint not null)
-create table entrepot (id bigint not null, capacite integer not null, primary key (id))
-create table entrepot_caisses (entrepot_id bigint not null, caisses_id bigint not null)
-create table produit (dtype varchar(31) not null, id bigint not null, description varchar(255), libelle varchar(255), nom varchar(255), pays_provenance varchar(255), prix_achat bigint not null, prix_vente bigint not null, type varchar(255), contenance integer, primary key (id))
-alter table caisse_produits add constraint UK_8hk20q1u8o64bqsuenfl0gof4 unique (produits_id)
-alter table entrepot_caisses add constraint UK_8r54tcbtsjakx9vcjib68rnrn unique (caisses_id)
-alter table caisse_produits add constraint FKkt1on4mk6scbiyibov1ci6gag foreign key (produits_id) references produit
-alter table caisse_produits add constraint FK2g3yj9bt86f8jyp3y062md5m4 foreign key (caisse_id) references caisse
-alter table entrepot_caisses add constraint FKpjyr1w3q4t741ds9768bxeka2 foreign key (caisses_id) references caisse
-alter table entrepot_caisses add constraint FKp99p0qgykow18mf0o0lv72kci foreign key (entrepot_id) references entrepot
-/*C25*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C23*/DISCONNECT
-/*C26*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C27*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C24*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C28*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C29*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C30*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C31*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C32*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C33*/SET SCHEMA PUBLIC
+create table caisse (id bigint not null, date_arrivee timestamp, date_commande timestamp, provenance varchar(255), entrepot_id bigint, primary key (id))
+create table entrepot (id bigint not null, capacite integer not null, name varchar(255), primary key (id))
+create table produit (dtype varchar(31) not null, id bigint not null, description varchar(255), libelle varchar(255), nom varchar(255), pays_provenance varchar(255), prix_achat bigint not null, prix_vente bigint not null, type varchar(255), contenance integer, caisse_id bigint, primary key (id))
+alter table caisse add constraint FKgs9q8d185ksif1ukovxhswalj foreign key (entrepot_id) references entrepot
+alter table produit add constraint FKjyrbfyy3lw3d1ky1cwny0cak foreign key (caisse_id) references caisse
 drop table if exists caisse CASCADE 
-drop table if exists caisse_produits CASCADE 
 drop table if exists entrepot CASCADE 
-drop table if exists entrepot_caisses CASCADE 
 drop table if exists produit CASCADE 
 drop sequence hibernate_sequence if exists
-create sequence hibernate_sequence start with 1 increment by 1
-create table caisse (id bigint not null, date_arrivee timestamp, date_commande timestamp, provenance varchar(255), primary key (id))
-create table caisse_produits (caisse_id bigint not null, produits_id bigint not null)
-create table entrepot (id bigint not null, capacite integer not null, primary key (id))
-create table entrepot_caisses (entrepot_id bigint not null, caisses_id bigint not null)
-create table produit (dtype varchar(31) not null, id bigint not null, description varchar(255), libelle varchar(255), nom varchar(255), pays_provenance varchar(255), prix_achat bigint not null, prix_vente bigint not null, type varchar(255), contenance integer, primary key (id))
-alter table caisse_produits add constraint UK_8hk20q1u8o64bqsuenfl0gof4 unique (produits_id)
-alter table entrepot_caisses add constraint UK_8r54tcbtsjakx9vcjib68rnrn unique (caisses_id)
-alter table caisse_produits add constraint FKkt1on4mk6scbiyibov1ci6gag foreign key (produits_id) references produit
-alter table caisse_produits add constraint FK2g3yj9bt86f8jyp3y062md5m4 foreign key (caisse_id) references caisse
-alter table entrepot_caisses add constraint FKpjyr1w3q4t741ds9768bxeka2 foreign key (caisses_id) references caisse
-alter table entrepot_caisses add constraint FKp99p0qgykow18mf0o0lv72kci foreign key (entrepot_id) references entrepot
+DISCONNECT
+/*C128*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C129*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C130*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C131*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C132*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C133*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C134*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C135*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C136*/SET SCHEMA PUBLIC
+DISCONNECT

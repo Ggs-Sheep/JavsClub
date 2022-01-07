@@ -1,7 +1,7 @@
-package com.example.JavsClub.Produits;
+package com.example.JavsClub.controller;
 
-import com.example.JavsClub.Produits.Produit;
-import com.example.JavsClub.Produits.ProduitRepository;
+import com.example.JavsClub.model.Produit;
+import com.example.JavsClub.repository.ProduitRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.ws.rs.*;
