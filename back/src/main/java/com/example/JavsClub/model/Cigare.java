@@ -25,7 +25,9 @@ public class Cigare extends Produit implements Serializable {
         this.type = "unknown";
     }
 
-    public Cigare(){}
+    public Cigare(){
+        this.type = "unknown";
+    }
 
     public String getType() {
         return type;

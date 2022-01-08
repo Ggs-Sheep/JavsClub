@@ -25,7 +25,9 @@ public class Whisky extends Produit implements Serializable {
         this.contenance = 75;
     }
 
-    public Whisky(){}
+    public Whisky(){
+        this.contenance = 75;
+    }
 
     public int getContenance() {
         return contenance;
