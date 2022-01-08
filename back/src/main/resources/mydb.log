@@ -1,26 +1,40 @@
-/*C10*/SET SCHEMA PUBLIC
-create table entrepot (id bigint not null, capacite integer not null, primary key (id))
-create table entrepot_produits (entrepot_id bigint not null, produits_id bigint not null)
-create table produit (dtype varchar(31) not null, id bigint not null, nom varchar(255), qte integer not null, type varchar(255), primary key (id))
-alter table entrepot_produits add constraint UK_qbchlpm19dlbggt5r98ckfys2 unique (produits_id)
-alter table entrepot_produits add constraint FKj0io9o40gwr3cey28q830bk5c foreign key (produits_id) references produit
-alter table entrepot_produits add constraint FK542jhmhv2gi8uofag1kkgql9j foreign key (entrepot_id) references entrepot
+/*C52*/SET SCHEMA PUBLIC
+drop table if exists caisse CASCADE 
+drop table if exists entrepot CASCADE 
+drop table if exists produit CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table caisse (id bigint not null, date_arrivee timestamp, date_commande timestamp, provenance varchar(255), entrepot_id bigint, primary key (id))
+create table entrepot (id bigint not null, capacite integer not null, name varchar(255), primary key (id))
+create table produit (dtype varchar(31) not null, id bigint not null, description varchar(255), libelle varchar(255), nom varchar(255), pays_provenance varchar(255), prix_achat bigint not null, prix_vente bigint not null, type varchar(255), contenance integer, caisse_id bigint, primary key (id))
+alter table caisse add constraint FKgs9q8d185ksif1ukovxhswalj foreign key (entrepot_id) references entrepot
+alter table produit add constraint FKjyrbfyy3lw3d1ky1cwny0cak foreign key (caisse_id) references caisse
+INSERT INTO PRODUIT VALUES('Cigare',1,NULL,NULL,NULL,NULL,0,0,'unknown',NULL,NULL)
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 2
+COMMIT
+INSERT INTO PRODUIT VALUES('Whisky',2,NULL,NULL,NULL,NULL,0,0,NULL,75,NULL)
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 3
+COMMIT
+drop table if exists caisse CASCADE 
+drop table if exists entrepot CASCADE 
+drop table if exists produit CASCADE 
+drop sequence hibernate_sequence if exists
 DISCONNECT
-/*C17*/SET SCHEMA PUBLIC
+/*C53*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C16*/SET SCHEMA PUBLIC
+/*C54*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C12*/SET SCHEMA PUBLIC
+/*C55*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C15*/SET SCHEMA PUBLIC
+/*C56*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C19*/SET SCHEMA PUBLIC
+/*C57*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C18*/SET SCHEMA PUBLIC
+/*C58*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C14*/SET SCHEMA PUBLIC
+/*C59*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C11*/SET SCHEMA PUBLIC
+/*C60*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C13*/SET SCHEMA PUBLIC
+/*C61*/SET SCHEMA PUBLIC
 DISCONNECT
