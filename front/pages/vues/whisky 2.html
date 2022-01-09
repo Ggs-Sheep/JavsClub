@@ -1,0 +1,168 @@
+    <div class="row h-100">
+        <div class="col-9">
+        <div id="vueProduit">
+        </div>
+        </div>
+        <div class="col-3 mr-2 h-100">
+            <div class="nav-produits bg-dark text-white p-3 w-100 h-100">
+                <div class="ms-4">
+                    <h4 class="fw-bold">Produits</h4>
+                </div>
+                <hr>
+                <div class="d-inline-flex flex-column justify-content-center mt-3 w-100">
+                    <table class="table">
+                    <tbody id="bodyTable">
+                    
+                    
+                    </tbody>
+                    </tbody>
+                    </table>
+                </div>
+            <div class="d-inline-flex justify-content-center w-100">
+                <td><button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="">Ajouter un produit</button></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modifier</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form>
+            <div class="mb-3">
+                <label for="name" class="col-form-label">Nom:</label>
+                <input type="text" class="form-control" id="name">
+            </div>
+            <div class="mb-3">
+                <label for="libelle" class="col-form-label">Libelle:</label>
+                <textarea class="form-control" id="libelle"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="col-form-label">Description:</label>
+                <textarea class="form-control" id="description"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="prix" class="col-form-label">Prix:</label>
+                <input type="number" class="form-control" id="prix" name="prix" >
+            </div>
+            <div class="mb-3">
+                <label for="prixAchat" class="col-form-label">Prix d'achat:</label>
+                <input type="number" class="form-control" id="prixAchat" name="parixAchat" >
+            </div>
+            <div class="mb-3">
+                <label for="paysProvenance" class="col-form-label">Pays de provenance:</label>
+                <input type="text" class="form-control" id="paysProvenance" name="paysProvenance" >
+            </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Valider</button>
+        </div>
+        </div>
+    </div>
+
+<script>  
+    function afficherProduit(id){
+        $.get({
+            url: '/whiskyVue',
+            success: function(data){
+                $('#vueProduit').html( data );
+                afficherWhisky(id);
+            },
+            dataType: 'html',
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log("Erreur");
+                alert(chr.responseText); //Ce code affichera le message d'erreur, ici Message d'erreur.
+            }
+        });
+    }
+
+    function getWhiskys(){
+        $.ajax({
+            method: "GET",
+            headers: {"Access-Control-Allow-Origin": "*"},
+            url: "http://localhost:8080/javsclub/whisky",
+            success:function(data){
+                //console.log("success");
+                afficherWhiskys(data);
+            }
+        })
+    }
+
+    function afficherWhisky(id){
+        $.ajax({
+            method: "GET",
+            url: "/test/"+id,
+            success:function(data){
+                console.log("success pour en récupérer un");
+                console.log(data)
+                $("#whiskyName").html(data.name);
+                $("#whiskyLibelle").html(data.libelle);
+                $("#whiskyDescription").html(data.description);
+                $("#whiskyPrix").html(data.prix);
+                $("#whiskyPrixAchat").html(data.prixAchat);
+                $("#whiskyPaysProvenance").html(data.paysProvenance);
+            }
+        })
+    }
+
+    getWhiskys();
+
+    function afficherWhiskys(data){
+        console.log(data);
+        console.log(data.users);
+        data.whiskys.forEach(d => {
+            $("#bodyTable").append('<tr>'+
+            '<td style="cursor:pointer" class="text-light" onclick="afficherProduit('+d.id+')">' + d.name + '</td>' +
+            '<td>' +
+                '<button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="'+d.id+','+d.name+','+d.libelle+','+d.description+','+d.prix+','+d.prixAchat+','+d.paysProvenance+'"><img src="https://img.icons8.com/external-becris-lineal-becris/16/000000/external-edit-mintab-for-ios-becris-lineal-becris.png"/></button>'+
+                '<button type="button" class="btn btn-danger mx-2"onclick="supprimer()"><img src="https://img.icons8.com/material-outlined/18/000000/filled-trash.png"/></button>' +
+            '</td>'+    
+            '</tr>'
+        );
+        });
+    }
+
+    //data = '{"whiskys":[{"nom":"Alcide Whisky"},{"nom":"Alcide Whisky"}]}';
+
+    //afficherWhiskys(data);
+
+    function newWhisky(){
+        $.ajax({
+            method: "POST",
+            url: "././DataTest/whikys.json",
+            success:console.log("success")
+        })
+    }
+        
+    var exampleModal = document.getElementById('exampleModal')
+    exampleModal.addEventListener('show.bs.modal', function (event) {
+        // Button that triggered the modal
+        var button = event.relatedTarget
+        // Extract info from data-bs-* attributes
+        var data = button.getAttribute('data-bs-whatever')
+        console.log(data);
+        data = data.split(",");
+        console.log(data)
+        // If necessary, you could initiate an AJAX request here
+        // and then do the updating in a callback.
+        //
+        // Update the modal's content.
+        var modalTitle = exampleModal.querySelector('.modal-title')
+        var modalBodyInput = exampleModal.querySelector('.modal-body input')
+        $('#name').val(data[1])
+        $('#libelle').html(data[2])
+        $('#description').html(data[3])
+        $('#prix').val(data[4])
+        $('#prixAchat').val(data[5])
+        $('#paysProvenance').val(data[6])
+
+        //modalBodyInput.value = recipient
+    })
+</script>

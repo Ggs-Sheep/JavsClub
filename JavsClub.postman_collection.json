@@ -1,0 +1,467 @@
+{
+	"info": {
+		"_postman_id": "c22fa438-f5f5-4c66-9548-729b7e770d2a",
+		"name": "JavsClub",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "Caisse",
+					"item": [
+						{
+							"name": "All Caisses",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/javsclub/caisse",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"javsclub",
+										"caisse"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Id Caisse",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/javsclub/caisse/{id_caisse}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"javsclub",
+										"caisse",
+										"{id_caisse}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Entrepot",
+					"item": [
+						{
+							"name": "All Entrepots",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/javsclub/entrepot",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"javsclub",
+										"entrepot"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Id Entrepot",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/javsclub/entrepot/{id_entrepot}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"javsclub",
+										"entrepot",
+										"{id_entrepot}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Produits",
+					"item": [
+						{
+							"name": "Cigare",
+							"item": [
+								{
+									"name": "All Cigare",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/javsclub/cigare",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"javsclub",
+												"cigare"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Id Cigare",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/javsclub/cigare/{id_cigare}",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"javsclub",
+												"cigare",
+												"{id_cigare}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Whisky",
+							"item": [
+								{
+									"name": "All Whisky",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/javsclub/whisky",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"javsclub",
+												"whisky"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Id Whisky",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/javsclub/whisky/{id_whisky}",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"javsclub",
+												"whisky",
+												"{id_whisky}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "Caisse",
+					"item": [
+						{
+							"name": "Empty Caisse",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/javsclub/caisse",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"javsclub",
+										"caisse"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Caisse",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"provenance\":\"France\",\n    \"dateArrivee\":\"2021-12-12\",\n    \"dateCommande\":\"2021-10-15\",\n    \"produits\": []\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/javsclub/caisse/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"javsclub",
+										"caisse",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Entrepot",
+					"item": [
+						{
+							"name": "Empty Entrepot",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/javsclub/entrepot",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"javsclub",
+										"entrepot"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Entrepot",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"Entrepot 1\",\n    \"capacite\":40\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/javsclub/entrepot",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"javsclub",
+										"entrepot"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Produits",
+					"item": [
+						{
+							"name": "Cigare",
+							"item": [
+								{
+									"name": "Empty Cigare",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/javsclub/cigare",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"javsclub",
+												"cigare"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create Cigare",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"nom\":\"Cubanos\",\n    \"paysProvenance\":\"Cuba\",\n    \"prixAchat\":10,\n    \"prixVente\":20,\n    \"libelle\":\"Cubain\",\n    \"description\":\"Ciagre\",\n    \"imgPath\":\"\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/javsclub/cigare",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"javsclub",
+												"cigare"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Whisky",
+							"item": [
+								{
+									"name": "Empty Whisky",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/javsclub/whisky",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"javsclub",
+												"whisky"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create Whisky",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"nom\":\"Altos Repoado\",\n    \"paysProvenance\":\"Mexique\",\n    \"prixAchat\":20,\n    \"prixVente\":35,\n    \"libelle\":\"Whisky du Mexique\",\n    \"description\":\"description\",\n    \"imgPath\":\"\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/javsclub/whisky/2",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"javsclub",
+												"whisky",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
