@@ -3,7 +3,7 @@
 
 
 
-## Prérequis
+## Prerequisites
 Node JS
 
 npm js
