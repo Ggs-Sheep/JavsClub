@@ -19,18 +19,20 @@ public abstract class Produit {
     private long prixVente;
     private String libelle;
     private String description;
+    private String imgPath;
 
     @JsonBackReference
     @ManyToOne
     private Caisse caisse;
 
-    public Produit(String nom, String paysProvenance, long prixAchat, long prixVente, String libelle, String description) {
+    public Produit(String nom, String paysProvenance, long prixAchat, long prixVente, String libelle, String description, String imgPath) {
         this.nom = nom;
         this.paysProvenance = paysProvenance;
         this.prixAchat = prixAchat;
         this.prixVente = prixVente;
         this.libelle = libelle;
         this.description = description;
+        this.imgPath = imgPath;
     }
 
     public Produit() {
@@ -99,5 +101,12 @@ public abstract class Produit {
         this.caisse = caisse;
     }
 
+    public String getImgPath() {
+        return imgPath;
+    }
+
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath;
+    }
 }
 
