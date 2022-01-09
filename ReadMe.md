@@ -51,3 +51,8 @@ npm start
 ```
 
 The web server should be listening on http://localhost:8081
+
+
+## Add the workspace to postman
+
+You can add the JavsClub.postman_collection.json file to postman to test the pre-build requests to test the API
