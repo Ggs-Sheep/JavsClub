@@ -1,13 +1,13 @@
 package com.example.JavsClub.model;
 
 import com.example.JavsClub.controller.CaisseRessource;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-public abstract class Produit implements Serializable {
-    private static final long serialVersionUID = 1L;
+public abstract class Produit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,17 +20,17 @@ public abstract class Produit implements Serializable {
     private String libelle;
     private String description;
 
+    @JsonBackReference
     @ManyToOne
     private Caisse caisse;
 
-    public Produit(String nom, String paysProvenance, long prixAchat, long prixVente, String libelle, String description, Caisse caisse) {
+    public Produit(String nom, String paysProvenance, long prixAchat, long prixVente, String libelle, String description) {
         this.nom = nom;
         this.paysProvenance = paysProvenance;
         this.prixAchat = prixAchat;
         this.prixVente = prixVente;
         this.libelle = libelle;
         this.description = description;
-        this.caisse = caisse;
     }
 
     public Produit() {

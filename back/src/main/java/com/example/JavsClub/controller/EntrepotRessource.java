@@ -23,7 +23,7 @@ public class EntrepotRessource {
     @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Optional<Entrepot> findEntrepotById(@QueryParam("id") Long id) {
+    public Optional<Entrepot> findEntrepotById(@PathParam("id") Long id) {
         Optional<Entrepot> e = entrepotRepository.findById(id);
         return e;
     }
@@ -36,7 +36,7 @@ public class EntrepotRessource {
 
     @DELETE
     @Path("/{id}")
-    public void deleteEntrepotById(@QueryParam("id") Long id) {
+    public void deleteEntrepotById(@PathParam("id") Long id) {
        Entrepot e = entrepotRepository.findEntrepotById(id);
        entrepotRepository.delete(e);
     }
