@@ -32,12 +32,12 @@ app.get("/whisky", (req, res) => {
 
 //Get tous les whiskys
 app.get("/test", (req, res) => {
-  res.sendFile(path.resolve('./DataTest/test.json'))
+  res.sendFile(path.resolve('./DataTest/Whiskys/test.json'))
 })
 
 //Get one whiskys
 app.get("/test/:id", (req, res) => {
-  res.sendFile(path.resolve('./DataTest/'+req.params.id+'.json'))
+  res.sendFile(path.resolve('./DataTest/Whiskys/'+req.params.id+'.json'))
 })
 
 // GET /whiskyVue
