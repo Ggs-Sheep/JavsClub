@@ -7,43 +7,38 @@
         "description": "Ce cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des gouts ",
         "prix": 25,
         "prixAchat": 20,
-        "paysProvenance": "Cohiba"
+        "paysProvenance": "Cohiba",
+        "imgPath":"img/Cigares/cohiba.webp"
       },
       {
         "id": 2,
-        "name": "Partagas",
+        "name": "Montecristo",
         "libelle": "Meilleur cigare du marché",
         "description": "Ce cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des gouts ",
-        "prix": 25,
-        "prixAchat": 20,
-        "paysProvenance": "Cohiba"
+        "prix": 175,
+        "prixAchat": 150,
+        "paysProvenance": "Cuba",
+        "imgPath":"img/Cigares/montecristo.webp"
       },
       {
         "id": 3,
-        "name": "Bolivar",
+        "name": "Romeo et juliette",
         "libelle": "Meilleur cigare du marché",
         "description": "Ce cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des gouts ",
-        "prix": 25,
-        "prixAchat": 20,
-        "paysProvenance": "Cohiba"
+        "prix": 150,
+        "prixAchat": 120,
+        "paysProvenance": "Cuba",
+        "imgPath":"img/Cigares/romeo.webp"
       },
       {
         "id": 4,
-        "name": "Motecristo",
+        "name": "Jose L. Pierdra Conservas",
         "libelle": "Meilleur cigare du marché",
         "description": "Ce cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des gouts ",
-        "prix": 25,
-        "prixAchat": 20,
-        "paysProvenance": "Cohiba"
-      },
-      {
-        "id": 5,
-        "name": "Quitero",
-        "libelle": "Meilleur cigare du marché",
-        "description": "Ce cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des goutsCe cigare apprecié des plus grand partage des gouts ",
-        "prix": 25,
-        "prixAchat": 20,
-        "paysProvenance": "Cohiba"
+        "prix": 20,
+        "prixAchat": 18,
+        "paysProvenance": "Cohiba",
+        "imgPath":"img/Cigares/jose.webp"
       }
     ]
   }

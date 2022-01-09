@@ -1,0 +1,55 @@
+{
+    "whiskys": [
+      {
+        "id": 1,
+        "name": "PORT CHARLOTTE 10 ans 50%",
+        "libelle": "Single Malt Whisky, Ecosse / Islay, 70cl, Ref: 55141",
+        "description": "Port Charlotte réinvente sa gamme et son packaging en 2018 pour laisser place à ce 10 ans d’âge qui vient remplacer le « Scottish Barley » de la distillerie. Toujours fabriqué à partir de 100% d’orge écossaise du comté d’Inverness et d’eau de source provenant d’Islay, ce single malt très tourbé (40 ppm) est vieilli à 65% en fûts de whiskey américain de 1er remplissage, 10% en fût de whiskey américain de 2nd remplissage 25% en fûts de vin français de 2nd remplissage Le nouveau packaging de la gamme Port Charlotte en bouteilles de verre de couleur verte est un clin d’œil au design des bouteilles de whiskies tourbés produits par d’autres distilleries d’Islay. Toutefois, la distillerie tient à ce que son single malt soit imaginé, distillé, vieilli et embouteillé à Islay.",
+        "prix": 66,
+        "prixAchat": 50,
+        "paysProvenance": "Ecosse",
+        "imgPath":"img/Whiskys/charlotte.jpeg"
+      },
+      {
+        "id": 2,
+        "name": "ARRAN 10 ans 46%",
+        "libelle": "Single Malt Whisky, Ecosse / Highlands-arran, 70cl, Ref: 56742",
+        "description": "Référence phare de la distillerie Arran lancée en 2006, la réputation du 10 ans n’est plus à faire. Résultant de l'assemblage de fûts de bourbon et de fûts de sherry hogsheads de 1er remplissage, ce single malt exprime parfaitement le caractère floral, épicé et fruité typique de la distillerie.Non-filtré à froid et sans colorant, c’est un single malt de dégustation, tout en élégance.Un indispensable, issu de l’une des rares distilleries écossaises à être restée indépendante, au caractère unique à l'image de l'île sauvage d'Arran. Fruité, doux et floral. Notes d'agrumes confites, pommes au four, gousse de vanille, cannelle et noisette.",
+        "prix": 49,
+        "prixAchat": 45,
+        "paysProvenance": "Ecosse",
+        "imgPath":"img/Whiskys/arran.jpeg"
+      },
+      {
+        "id": 3,
+        "name": "SEA SHEPHERD 43%",
+        "libelle": "Single Malt Whisky, Ecosse / Islay, 70cl, Ref: 57095",
+        "description": "Un bon whisky pour une bonne cause ! Kirsch Spirituosen a embouteillé une édition spéciale en partenariat avec l'ONG de défense des océans SEA SHEPHERD, à laquelle une partie des bénéfices est reversée. Ce whisky inédit est un Single Malt d'Islay qui reflète le caractère fort et marin de ces pirates protecteurs des océans. On retrouve des notes intenses de fumée et de tourbe typiques de l'île d'Islay.",
+        "prix": 49,
+        "prixAchat": 40,
+        "paysProvenance": "Ecosse",
+        "imgPath":"img/Whiskys/sea.jpeg"
+      },
+      {
+        "id": 4,
+        "name": "MACHRIE MOOR 46%",
+        "libelle": "Single Malt Whisky, Ecosse / Highlands-arran, 70cl, Ref: 55154",
+        "description": "Dans la partie ouest de l‘île d’Arran se trouve un champ de tourbe appelé « Machrie Moor ». C’est là que, selon la légende, le géant Fingal attachait son chien favori, Bran, à une pierre levée. Cette version tourbée à 20 ppm, élevée en fûts de bourbon du single malt d’Arran et embouteillée à 46%, est un hommage à la beauté sauvage mais harmonieuse de l'île d'Arran.Frais et doux, il possède néanmoins des notes terreuses et végétales issue d'une tourbe expressive. Un équilibre surprenant!",
+        "prix": 58,
+        "prixAchat": 50,
+        "paysProvenance": "Ecosse",
+        "imgPath":"img/Whiskys/marchie.jpeg"
+      },
+      {
+        "id": 5,
+        "name": "LEDAIG 10 ans Un-chillfiltered 46,3%",
+        "libelle": "Single Malt Whisky, Ecosse / Highlands-mull, 70cl, Ref: 16225",
+        "description": "Ledaig 10 ans Un-chillfiltered est un single malt tourbé élaboré sur l’ile de Mull dans la célèbre distillerie de Tobermory. Embouteillé sans filtration à froid.",
+        "prix": 54,
+        "prixAchat": 50,
+        "paysProvenance": "Ecosse",
+        "imgPath":"img/Whiskys/ledaig.jpeg"
+      }
+    ]
+  }
+  

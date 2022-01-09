@@ -446,3 +446,22 @@ create table entrepot (id bigint not null, capacite integer not null, name varch
 create table produit (dtype varchar(31) not null, id bigint not null, description varchar(255), libelle varchar(255), nom varchar(255), pays_provenance varchar(255), prix_achat bigint not null, prix_vente bigint not null, type varchar(255), contenance integer, caisse_id bigint, primary key (id))
 alter table caisse add constraint FKgs9q8d185ksif1ukovxhswalj foreign key (entrepot_id) references entrepot
 alter table produit add constraint FKjyrbfyy3lw3d1ky1cwny0cak foreign key (caisse_id) references caisse
+DISCONNECT
+/*C453*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C456*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C455*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C454*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C457*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C458*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C459*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C460*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C461*/SET SCHEMA PUBLIC
+DISCONNECT

@@ -1,2 +1,2 @@
 # first arg is path to hsqldb/lib folder, second one is dbname
-java -cp /Users/claux/Documents/FISA3/WebServices/hsqldb/lib/hsqldb.jar org.hsqldb.server.Server --database.0 file:mydb --dbname.0 JavsClub
+java -cp /Users/alcidefaucheron/Downloads/hsqldb-2.6-2.1/hsqldb/lib/hsqldb.jar org.hsqldb.server.Server --database.0 file:mydb --dbname.0 JavsClub
