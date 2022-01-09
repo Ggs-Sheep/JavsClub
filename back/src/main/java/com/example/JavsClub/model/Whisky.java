@@ -9,19 +9,15 @@ import java.io.Serializable;
 public class Whisky extends Produit implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
-    private Long id;
     private int contenance;
 
-    public Whisky(String nom, String paysProvenance, long prixVente, long prixAchat, String libelle, String description, Caisse caisse, int contenance) {
-        super(nom, paysProvenance, prixVente, prixAchat, libelle, description, caisse);
+    public Whisky(String nom, String paysProvenance, long prixVente, long prixAchat, String libelle, String description, int contenance) {
+        super(nom, paysProvenance, prixVente, prixAchat, libelle, description);
         this.contenance = contenance;
     }
 
-    public Whisky(String nom, String paysProvenance, long prixVente, long prixAchat, String libelle, String description, Caisse caisse){
-        super(nom, paysProvenance, prixVente, prixAchat, libelle, description, caisse);
+    public Whisky(String nom, String paysProvenance, long prixVente, long prixAchat, String libelle, String description){
+        super(nom, paysProvenance, prixVente, prixAchat, libelle, description);
         this.contenance = 75;
     }
 

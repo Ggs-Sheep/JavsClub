@@ -1,6 +1,7 @@
 package com.example.JavsClub.model;
 
 import com.example.JavsClub.model.Caisse;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -17,6 +18,7 @@ public class Entrepot implements Serializable {
     private String name;
     private int capacite;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "entrepot", fetch = FetchType.EAGER)
     private List<Caisse> caisses = new ArrayList<>();
 
@@ -32,11 +34,11 @@ public class Entrepot implements Serializable {
         this.name = "undefined-entrepot";
     }
 
-    Long getId() {
+    public Long getId() {
         return id;
     }
 
-    void setId(Long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

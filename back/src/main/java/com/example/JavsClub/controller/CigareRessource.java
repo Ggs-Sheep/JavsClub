@@ -1,6 +1,7 @@
 package com.example.JavsClub.controller;
 
 import com.example.JavsClub.model.Cigare;
+import com.example.JavsClub.repository.CaisseRepository;
 import com.example.JavsClub.repository.CigareRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -13,6 +14,9 @@ import java.util.Optional;
 public class CigareRessource {
 
     @Autowired
+    private CaisseRepository caisseRepository;
+
+    @Autowired
     private CigareRepository cigareRepository;
 
     @GET
@@ -23,20 +27,23 @@ public class CigareRessource {
     @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Optional<Cigare> findCigareById(@QueryParam("id") Long id) {
+    public Optional<Cigare> findCigareById(@PathParam("id") Long id) {
         Optional<Cigare> c = cigareRepository.findById(id);
         return c;
     }
 
     @POST
+    @Path("/{id_caisse}")
     @Consumes(MediaType.APPLICATION_JSON) @Produces(MediaType.APPLICATION_JSON)
-    public Cigare createWhisky(Cigare c) {
+    public Cigare createWhisky(Cigare c, @PathParam("id_caisse") Long id_caisse) {
+        caisseRepository.findCaisseById(id_caisse).addProduit(c);
+        c.setCaisse(caisseRepository.findCaisseById(id_caisse));
         return cigareRepository.save(c);
     }
 
     @DELETE
     @Path("/{id}")
-    public void deleteCigareById(@QueryParam("id") Long id) {
+    public void deleteCigareById(@PathParam("id") Long id) {
         Cigare c = cigareRepository.findCigareById(id);
         cigareRepository.delete(c);
     }

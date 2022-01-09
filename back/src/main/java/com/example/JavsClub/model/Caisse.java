@@ -1,6 +1,8 @@
 package com.example.JavsClub.model;
 
 import com.example.JavsClub.controller.EntrepotRessource;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -23,21 +25,22 @@ public class Caisse implements Serializable {
     private Date dateArrivee;
     private Date dateCommande;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "caisse", fetch = FetchType.EAGER)
     private List<Produit> produits = new ArrayList<>();
 
+    @JsonBackReference
     @ManyToOne
     private Entrepot entrepot;
 
     public Caisse() {
     }
 
-    public Caisse(String provenance, Date dateArrivee, Date dateCommande, List<Produit> produits, Entrepot entrepot) {
+    public Caisse(String provenance, Date dateArrivee, Date dateCommande, List<Produit> produits) {
         this.provenance = provenance;
         this.dateArrivee = dateArrivee;
         this.dateCommande = dateCommande;
         this.produits = produits;
-        this.entrepot = entrepot;
     }
 
     public String getProvenance() {
@@ -91,6 +94,7 @@ public class Caisse implements Serializable {
     public void setEntrepot(Entrepot entrepot) {
         this.entrepot = entrepot;
     }
+
 }
 
 
