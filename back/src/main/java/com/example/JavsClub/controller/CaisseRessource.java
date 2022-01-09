@@ -5,6 +5,7 @@ import com.example.JavsClub.model.Entrepot;
 import com.example.JavsClub.repository.CaisseRepository;
 import com.example.JavsClub.repository.EntrepotRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

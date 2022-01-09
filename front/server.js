@@ -2,6 +2,7 @@ const path = require('path')
 const express = require("express")
 const fs = require('fs');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 mongoose.connect('mongodb://localhost:27017/IntroMango');
 
@@ -15,6 +16,29 @@ const player = new Player({name:"Alcide", age:20})
 // player.save()
 
 app.use(express.static('public'))
+app.use(cors({origin: '*'}));
+
+// Add headers before the routes are defined
+app.use(function (req, res, next) {
+
+  // Website you wish to allow to connect
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8081');
+
+  // Request methods you wish to allow
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+  // Request headers you wish to allow
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+  // Pass to next layer of middleware
+  next();
+});
+
+
+
+
+
 // GET /
 app.get("/", (req, res) => {
   res.sendFile(path.resolve(pagesDirectory,'home.html'))
@@ -28,11 +52,6 @@ app.get("/cigares", (req, res) => {
 // GET /whisky page
 app.get("/whisky", (req, res) => {
   res.sendFile(path.resolve(pagesDirectory,'vues/whisky.html'))
-})
-
-//Get tous les whiskys
-app.get("/test", (req, res) => {
-  res.sendFile(path.resolve('./DataTest/Whiskys/test.json'))
 })
 
 //Get one whiskys
@@ -51,6 +70,6 @@ app.get("*", (req, res) => {
   res.end()
 })
 
-app.listen(3000, () => {
-  console.log("App listening on port 3000")
+app.listen(8081, () => {
+  console.log("App listening on port 8081")
 })

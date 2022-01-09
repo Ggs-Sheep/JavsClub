@@ -86,9 +86,10 @@
     function getWhiskys(){
         $.ajax({
             method: "GET",
-            url: "/test",
+            headers: {"Access-Control-Allow-Origin": "*"},
+            url: "http://localhost:8080/javsclub/whisky",
             success:function(data){
-                console.log("success");
+                //console.log("success");
                 afficherWhiskys(data);
             }
         })

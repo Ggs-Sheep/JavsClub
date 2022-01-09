@@ -3,6 +3,7 @@ package com.example.JavsClub.controller;
 import com.example.JavsClub.model.Entrepot;
 import com.example.JavsClub.repository.EntrepotRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -15,8 +16,7 @@ public class EntrepotRessource {
     @Autowired
     private EntrepotRepository entrepotRepository;
 
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
+    @GET @Produces(MediaType.APPLICATION_JSON)
     public List<Entrepot> getAllEntrepot(){return (List<Entrepot>) entrepotRepository.findAll();}
 
 

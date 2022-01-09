@@ -4,11 +4,13 @@ import com.example.JavsClub.model.Whisky;
 import com.example.JavsClub.repository.CaisseRepository;
 import com.example.JavsClub.repository.WhiskyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 import java.util.Optional;
+
 
 @Path("whisky")
 public class WhiskyRessource {
