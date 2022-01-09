@@ -11,14 +11,8 @@ public class Whisky extends Produit implements Serializable {
 
     private int contenance;
 
-    public Whisky(String nom, String paysProvenance, long prixVente, long prixAchat, String libelle, String description, int contenance) {
-        super(nom, paysProvenance, prixVente, prixAchat, libelle, description);
-        this.contenance = contenance;
-    }
-
-    public Whisky(String nom, String paysProvenance, long prixVente, long prixAchat, String libelle, String description){
-        super(nom, paysProvenance, prixVente, prixAchat, libelle, description);
-        this.contenance = 75;
+    public Whisky(String nom, String paysProvenance, long prixVente, long prixAchat, String libelle, String description, String imgPath) {
+        super(nom, paysProvenance, prixVente, prixAchat, libelle, description, imgPath);
     }
 
     public Whisky(){

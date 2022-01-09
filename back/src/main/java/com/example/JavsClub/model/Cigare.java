@@ -11,13 +11,13 @@ public class Cigare extends Produit implements Serializable {
 
     private String type;
 
-    public Cigare(String nom, String paysProvenance, long prixVente, long prixAchat, String libelle, String description, String type) {
-        super(nom, paysProvenance, prixVente, prixAchat, libelle, description);
+    public Cigare(String nom, String paysProvenance, long prixVente, long prixAchat, String libelle, String description, String imgPath, String type) {
+        super(nom, paysProvenance, prixVente, prixAchat, libelle, description, imgPath);
         this.type = type;
     }
 
-    public Cigare(String nom, String paysProvenance, long prixVente, long prixAchat, String libelle, String description) {
-        super(nom, paysProvenance, prixVente, prixAchat, libelle, description);
+    public Cigare(String nom, String paysProvenance, long prixVente, long prixAchat, String libelle, String imgPath, String description) {
+        super(nom, paysProvenance, prixVente, prixAchat, libelle, description, imgPath);
         this.type = "unknown";
     }
 
