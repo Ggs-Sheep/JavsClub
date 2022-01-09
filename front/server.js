@@ -25,14 +25,19 @@ app.get("/cigares", (req, res) => {
   res.sendFile(path.resolve(pagesDirectory,'cigares.html'))
 })
 
-// GET /whisky
+// GET /whisky page
 app.get("/whisky", (req, res) => {
   res.sendFile(path.resolve(pagesDirectory,'vues/whisky.html'))
 })
 
-// GET /whisky
-app.get("/signUp", (req, res) => {
-  res.sendFile(path.resolve(pagesDirectory,'signup.html'))
+//Get tous les whiskys
+app.get("/test", (req, res) => {
+  res.sendFile(path.resolve('./DataTest/test.json'))
+})
+
+//Get one whiskys
+app.get("/test/:id", (req, res) => {
+  res.sendFile(path.resolve('./DataTest/'+req.params.id+'.json'))
 })
 
 // GET /whiskyVue
